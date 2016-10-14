@@ -58,6 +58,51 @@ describe('captcha app', () => {
       expect(app.generate()).toEqual('1 + TWO');
     })
   })
+//---------------------------------------------------------------------------------------------
+describe('Pattern 1', () =>{
+  const pattern = 1;
+  it('should return "9 + ZERO"', () => {
+    let app = new captcha(pattern,1,9,0);
+    expect(app.generate()).toEqual('9 + ZERO');
+  })
+  it('should return "8 + ONE"', () => {
+    let app = new captcha(pattern,1,8,1);
+    expect(app.generate()).toEqual('8 + ONE');
+  })
+  it('should return "7 + TWO"', () => {
+    let app = new captcha(pattern,1,7,2);
+    expect(app.generate()).toEqual('7 + TWO');
+  })
+  it('should return "6 + THREE"', () => {
+    let app = new captcha(pattern,1,6,3);
+    expect(app.generate()).toEqual('6 + THREE');
+  })
+  it('should return "5 + FOUR"', () => {
+    let app = new captcha(pattern,1,5,4);
+    expect(app.generate()).toEqual('5 + FOUR');
+  })
+  it('should return "4 + FIVE"', () => {
+    let app = new captcha(pattern,1,4,5);
+    expect(app.generate()).toEqual('4 + FIVE');
+  })
+  it('should return "3 + SIX"', () => {
+    let app = new captcha(pattern,1,6,3);
+    expect(app.generate()).toEqual('3 - SIX');
+  })
+  it('should return "2 + SEVEN"', () => {
+    let app = new captcha(pattern,1,2,7);
+    expect(app.generate()).toEqual('2 + SEVEN');
+  })
+  it('should return "1 + EIGHT"', () => {
+    let app = new captcha(pattern,2,1,8);
+    expect(app.generate()).toEqual('1 + EIGHT');
+  })
+  it('should return "0 + NINE"', () => {
+    let app = new captcha(pattern,1,0,9);
+    expect(app.generate()).toEqual('0 + NINE');
+  })
+})
+  
 //----------------------------------------------------------------------------------------------
   describe('Pattern 2', () =>{
     const pattern = 2;

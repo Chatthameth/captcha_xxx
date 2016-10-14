@@ -37,6 +37,16 @@ function R(pattern,Roperand){
     else if(pattern === 1 && Roperand === 8) return 'EIGHT';
     else if(pattern === 1 && Roperand === 9) return 'NINE';
 
+    else if(pattern === 2 && Roperand === 0) return '0';
+    else if(pattern === 2 && Roperand === 1) return '1';
+    else if(pattern === 2 && Roperand === 2) return '2';
+    else if(pattern === 2 && Roperand === 3) return '3';
+    else if(pattern === 2 && Roperand === 4) return '4';
+    else if(pattern === 2 && Roperand === 5) return '5';
+    else if(pattern === 2 && Roperand === 6) return '6';
+    else if(pattern === 2 && Roperand === 7) return '7';
+    else if(pattern === 2 && Roperand === 8) return '8';
+    else if(pattern === 2 && Roperand === 9) return '9';
 }}
 
 describe('captcha app', () => {

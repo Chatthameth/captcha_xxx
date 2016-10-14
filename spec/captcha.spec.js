@@ -12,16 +12,17 @@ this.toString = function(){
 
 function L(pattern,Loperand){
   this.toString = function(){
-      if (pattern === 1 && Loperand === 0)      { return '0' };
-      else if (pattern === 1 && Loperand === 1) { return '1' };
-      else if (pattern === 1 && Loperand === 2) { return '2' };
-      else if (pattern === 1 && Loperand === 3) { return '3' };
-      else if (pattern === 1 && Loperand === 4) { return '4' };
-      else if (pattern === 1 && Loperand === 5) { return '5' };
-      else if (pattern === 1 && Loperand === 6) { return '6' };
-      else if (pattern === 1 && Loperand === 7) { return '7' };
-      else if (pattern === 1 && Loperand === 8) { return '8' };
-      else if (pattern === 1 && Loperand === 9) { return '9' };
+      if (pattern === 1 && Loperand === 0)      { return '0'; }
+      else if (pattern === 1 && Loperand === 1) { return '1'; }
+      else if (pattern === 1 && Loperand === 2) { return '2'; }
+      else if (pattern === 1 && Loperand === 3) { return '3'; }
+      else if (pattern === 1 && Loperand === 4) { return '4'; }
+      else if (pattern === 1 && Loperand === 5) { return '5'; }
+      else if (pattern === 1 && Loperand === 6) { return '6'; }
+      else if (pattern === 1 && Loperand === 7) { return '7'; }
+      else if (pattern === 1 && Loperand === 8) { return '8'; }
+      else if (pattern === 1 && Loperand === 9) { return '9'; }
+
 }}
 
 function R(pattern,Roperand){
@@ -50,5 +51,55 @@ function R(pattern,Roperand){
 }}
 
 describe('captcha app', () => {
-
+  describe('Pattern 1', () => {
+    const pattern = 1;
+    it('should return "1 + TWO" when input is 1,1,1,2', () => {
+      let app = new captcha(pattern,1,1,2);
+      expect(app.generate()).toEqual('1 + TWO');
+    })
+  })
+//----------------------------------------------------------------------------------------------
+  describe('Pattern 2', () =>{
+    const pattern = 2;
+    it('should return "ZERO + 9"', () => {
+      let app = new captcha(pattern,1,0,9);
+      expect(app.generate()).toEqual('ZERO + 9');
+    })
+    it('should return "ONE + 8"', () => {
+      let app = new captcha(pattern,1,1,8);
+      expect(app.generate()).toEqual('ONE + 8');
+    })
+    it('should return "TWO + 7"', () => {
+      let app = new captcha(pattern,1,2,7);
+      expect(app.generate()).toEqual('TWO + 7');
+    })
+    it('should return "THREE + 6"', () => {
+      let app = new captcha(pattern,1,3,6);
+      expect(app.generate()).toEqual('THREE + 6');
+    })
+    it('should return "FOUR + 5"', () => {
+      let app = new captcha(pattern,1,4,5);
+      expect(app.generate()).toEqual('FOUR + 5');
+    })
+    it('should return "FIVE + 4"', () => {
+      let app = new captcha(pattern,1,5,4);
+      expect(app.generate()).toEqual('FIVE + 4');
+    })
+    it('should return "SIX - 3"', () => {
+      let app = new captcha(pattern,2,6,3);
+      expect(app.generate()).toEqual('SIX - 3');
+    })
+    it('should return "SEVEN - 2"', () => {
+      let app = new captcha(pattern,2,7,2);
+      expect(app.generate()).toEqual('SEVEN - 2');
+    })
+    it('should return "EIGHT - 1"', () => {
+      let app = new captcha(pattern,2,8,1);
+      expect(app.generate()).toEqual('EIGHT - 1');
+    })
+    it('should return "NINE - 0"', () => {
+      let app = new captcha(pattern,2,9,0);
+      expect(app.generate()).toEqual('NINE - 0');
+    })
+  })
 })

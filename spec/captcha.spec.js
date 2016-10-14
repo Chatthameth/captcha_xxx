@@ -13,7 +13,16 @@ this.toString = function(){
 }}
 
 function L(pattern,Loperand){
-
+  if (pattern === 1 && Loperand === 0)      { return '0' };
+  else if (pattern === 1 && Loperand === 1) { return '1' };
+  else if (pattern === 1 && Loperand === 2) { return '2' };
+  else if (pattern === 1 && Loperand === 3) { return '3' };
+  else if (pattern === 1 && Loperand === 4) { return '4' };
+  else if (pattern === 1 && Loperand === 5) { return '5' };
+  else if (pattern === 1 && Loperand === 6) { return '6' };
+  else if (pattern === 1 && Loperand === 7) { return '7' };
+  else if (pattern === 1 && Loperand === 8) { return '8' };
+  else if (pattern === 1 && Loperand === 9) { return '9' };        
 }
 
 function R(pattern,Roperand){

@@ -104,6 +104,10 @@ describe('Pattern 1', () =>{
     let app = new captcha(pattern,2,0,9);
     expect(app.generate()).toEqual('0 - NINE');
   })
+  it('should return "4 - ZERO"', () => {
+    let app = new captcha(pattern,2,4,0);
+    expect(app.generate()).toEqual('4 - ZERO');
+  })
 })
 //----------------------------------------------------------------------------------------------
   describe('Pattern 2', () =>{
@@ -147,6 +151,10 @@ describe('Pattern 1', () =>{
     it('should return "NINE - 0"', () => {
       let app = new captcha(pattern,2,9,0);
       expect(app.generate()).toEqual('NINE - 0');
+    })
+    it('should return "ZERO - 5"', () => {
+      let app = new captcha(pattern,2,0,5);
+      expect(app.generate()).toEqual('ZERO - 5');
     })
   })
 })
